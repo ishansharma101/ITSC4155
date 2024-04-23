@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="js" type="text/css" href="script.js">
+    <script src="https://kit.fontawesome.com/c8a10b522c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="homepage1.html" i class="fa-solid fa-house"></a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Create Event</a></li>
+                <li><a href="#">My Events</a></li>
+                <li class="dropdown">
+                    <a href="#">My Profile</a>
+                    <div class="dropdown-content">
+                        <a href="settings.html">settings</a>
+                        <a href="#">Friends</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>User Profile
+        <div class="profile-img">
+            <img src="defaultImage.png" alt="">
+        </div>
+    </h1>
+    <form id="profileForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Ex. John Doe"><br><br>
+        
+        <label for="bio">Bio:</label>
+        <input type="text" id="bio" name="bio" placeholder="Ex. Lorem ipsum dolor sit amet..."><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Ex. john.doe@example.com"><br><br>
+        
+        
+        
+        
+        <input type="submit" value="Save" id="Save">
+    </form>
+</body>
+
+<footer>
+    <p>&copy; Group 9 4155</p>
+    <p>
+       
+</footer>
+
+<script>
+
+document.getElementById("profileForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let bio = document.getElementById("bio").value;
+    let email = document.getElementById("email").value;
+
+
+    // Send this data to the server to update the user profile
+    console.log("Name: " + name);
+    console.log("Bio: " + bio);
+    console.log("Email: " + email);
+
+     // Redirect to the home page
+window.location.href = "homepage1.html"; // Change "home.html" to the actual home page URL
+});
+
+</script>
+
+</html>
+
+
