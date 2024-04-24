@@ -1,8 +1,69 @@
 /* homepage.css */
 
-body {
+body,html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.section_top{
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: relative;
+background-image: url(Images/charlotte_campus.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+text-align: center;
+justify-content: center;
+animation: change 30s infinite ease-in-out ;
+}
+@keyframes change{
+    0%
+    {
+        background-image: url(Images/charlotte_campus.png);
+    }
+    20%
+    {
+        background-image: url(Images/charlotte_entrance.jpeg);
+    }
+    40%
+    {
+        background-image: url(Images/charlotte_logo.jpeg);
+    }
+    60%
+    {
+        background-image: url(Images/charlotte_skyline.jpg);
+    }
+    80%
+    {
+        background-image: url(Images/charlotte_skyline2.jpeg);
+    }
+}
+
+.content{
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+}
+
+.content a{
+    color: white;
+    background: darkgreen;
+    padding:10px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.content a:hover{
+    color: #ffcc00;
 }
 
 header {
@@ -110,10 +171,6 @@ nav ul li a:hover {
     margin: 20px;
 }
 
-h1 {
-    text-align: center;
-}
-
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -160,8 +217,6 @@ input[type="submit"]:hover {
 }
 
 
-
-
 footer {
     background-color: darkgreen;
     padding: 20px 0;
@@ -177,3 +232,20 @@ footer p {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+/*--- profile page -----*/
+
+.profile-container{
+padding:20px 15%;
+color: #626262;
+}
+
+.cover-img{
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+/*--- Image Slideshow ---*/
+

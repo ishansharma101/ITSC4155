@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>User Profile</title>
+    <link rel="icon" href='Images/tabIcon.png'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="js" type="text/css" href="script.js">
     <script src="https://kit.fontawesome.com/c8a10b522c.js" crossorigin="anonymous"></script>
@@ -16,7 +17,7 @@
                 <li><a href="#">Create Event</a></li>
                 <li><a href="#">My Events</a></li>
                 <li class="dropdown">
-                    <a href="#">My Profile</a>
+                    <a href="profile.html">My Profile</a>
                     <div class="dropdown-content">
                         <a href="settings.html">settings</a>
                         <a href="#">Friends</a>
@@ -28,7 +29,7 @@
     </header>
     <h1>User Profile
         <div class="profile-img">
-            <img src="defaultImage.png" alt="">
+            <img src="Images/defaultImage.png" alt="">
         </div>
     </h1>
     <form id="profileForm">
@@ -69,7 +70,7 @@ document.getElementById("profileForm").addEventListener("submit", function(event
     console.log("Email: " + email);
 
      // Redirect to the home page
-window.location.href = "homepage1.html"; // Change "home.html" to the actual home page URL
+window.location.href = "homepage1.html"; 
 });
 
 </script>
