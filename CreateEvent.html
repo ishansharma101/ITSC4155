@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="homepage1.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Create Event</a></li>
+                <li><a href="#">My Events</a></li>
+                <li class="dropdown">
+                    <a href="profile.html">My Profile</a>
+                    <div class="dropdown-content">
+                        <a href="settings.html">Settings</a>
+                        <a href="#">Friends</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="submit.php" method="post">
+        <label for="eventName"><strong>Event Name:</strong></label><br>
+        <input type="text" id="eventName" name="eventName" required><br>
+        <label for="eventSize"><strong>Event Size Limit:</strong></label><br>
+        <input type="number" id="eventSize" name="eventSize" required><br>
+        <label for="eventLocation"><strong>Event Location:</strong></label><br>
+        <input type="text" id="eventLocation" name="eventLocation" required><br>
+        <label for="eventDescription"><strong>Event Description:</strong></label><br>
+        <textarea id="eventDescription" name="eventDescription" required></textarea><br>
+        <label for="eventDate"><strong>Event Date:</strong></label><br>
+        <input type="date" id="eventDate" name="eventDate" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
