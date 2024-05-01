@@ -236,16 +236,77 @@ footer a:hover {
 
 /*--- profile page -----*/
 
-.profile-container{
-padding:20px 15%;
-color: #626262;
+.profile-card {
+    display: flex;
+    flex-direction: column ;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow:hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
-
-.cover-img{
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 14px;
+.profile-header {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, darkgreen, white);
+    color: rgb(0, 0, 0);
+}
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+.profile-name,
+.profile-designation,
+.profile-location {
+    margin: 0;
+}
+.profile-details {
+    padding: 20px;
+}
+.profile-details p {
+    margin: 10px 0;
+}
+.interactive-counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.interactive-counter button {
+    background-color: darkgreen;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.interactive-counter button:hover {
+    color: #ffcc00;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.social-links a {
+    margin: 0 5px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+.social-links i {
+    transition: color 0.3s ease;
+}
+.social-links a:hover i {
+    color: white;
+}
+.social-icon {
+    font-size: 3em;
+    transition: transform 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
 /*--- Image Slideshow ---*/
+
 

@@ -4,7 +4,7 @@
     <title>User Profile</title>
     <link rel="icon" href='Images/tabIcon.png'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="js" type="text/css" href="script.js">
+    <link rel="js"  type="text/javascript" href="script.js">
     <script src="https://kit.fontawesome.com/c8a10b522c.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,7 +16,6 @@
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Create Event</a></li>
                 <li><a href="#">My Events</a></li>
-                <li><a href="Message-Board.html">Message-Board</a></li>
                 <li class="dropdown">
                     <a href="profile.html">My Profile</a>
                     <div class="dropdown-content">
@@ -37,11 +36,15 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Ex. John Doe"><br><br>
         
-        <label for="bio">Bio:</label>
-        <input type="text" id="bio" name="bio" placeholder="Ex. Lorem ipsum dolor sit amet..."><br><br>
+        <label for="Major">Major:</label>
+        <input type="text" id="Major" name="Major" placeholder="Ex. Business"><br><br>
         
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Ex. john.doe@example.com"><br><br>
+        <label for="Class">Class:</label>
+        <select id="year" name="year">
+            <option value="freshman">Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
         
         
         
@@ -61,14 +64,14 @@
 document.getElementById("profileForm").addEventListener("submit", function(event) {
     event.preventDefault();
     let name = document.getElementById("name").value;
-    let bio = document.getElementById("bio").value;
-    let email = document.getElementById("email").value;
+    let major = document.getElementById("Major").value;
+    let Class = document.getElementById("year").value;
 
 
     // Send this data to the server to update the user profile
     console.log("Name: " + name);
-    console.log("Bio: " + bio);
-    console.log("Email: " + email);
+    console.log("Major: " + major);
+    console.log("Class: " + Class);
 
      // Redirect to the home page
 window.location.href = "homepage1.html"; 
