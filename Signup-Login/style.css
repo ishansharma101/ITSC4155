@@ -71,6 +71,7 @@ input{
 
 form p{
     text-align: left;
+    margin: 10px 0;
     font-size: 13px;
 }
 form p a{
@@ -81,11 +82,11 @@ form p a{
 .btn-field{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .btn-field button{
     flex-basis: 48%;
-    background: #eaeaea;
+    background: #0a4b04;
     color: #fff;
     height: 40px;
     border-radius: 20px;
@@ -96,10 +97,10 @@ form p a{
 }
 
 .input-group{
-    height: 280px;
+    height: 250px;
 }
 
 .btn-field button.disable{
-    background: #0a4b04;
+    background: #eaeaea;
     color: 555;
 }
