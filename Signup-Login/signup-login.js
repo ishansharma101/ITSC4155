@@ -53,11 +53,10 @@ app.post("/login",(req,res)=>{
         }
         if(user){
             console.log("Login Successful")
-            // Here, you can redirect the user to a dashboard or any other page
-            return res.redirect('homepage1.html')
+            //TO-DO: Adjust where user is redirected after signing in.
+            return res.redirect('')
         } else {
             console.log("Invalid email or password")
-            // You can redirect the user back to the login page with an error message
             return res.redirect('Signup.html')
         }
     })
