@@ -20,18 +20,28 @@ app.post("/signup",(req,res)=>{
     var email=req.body.email
     var password=req.body.password
 
-    var data={
-        "username":username,
-        "email":email,
-        "password":password
-    }
-    db.collection('users').insertOne(data,(err,collection) => {
+    db.collection('users').findOne({$or: [{email: email}, {username: username}]}, (err, existingUser) => {
         if(err){
             throw err;
         }
-        console.log("Record Inserted Successfully")
+        if(existingUser){
+            console.log("Email or username already exists. Please choose another.")
+            return res.redirect('signup.html?error=duplicate')
+        } else {
+            var data={
+                "username":username,
+                "email":email,
+                "password":password
+            }
+            db.collection('users').insertOne(data,(err,collection) => {
+                if(err){
+                    throw err;
+                }
+                console.log("Record Inserted Successfully")
+                return res.redirect('login.html')
+            })
+        }
     })
-    return res.redirect('login.html')
 })
 
 app.get("/",(req,res)=>{
