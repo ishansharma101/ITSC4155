@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="delete-btn">Delete</button>
             <button class="comment-btn">Comment</button>
             <button class="like-btn">Like</button>
+            <span class="like-count">0</span> Likes
             <div class="comments"></div>
             <textarea class="comment-input" placeholder="Write your comment..."></textarea>
             <button class="post-comment-btn">Post</button>`;
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Append message to message board
         const messageBoard = document.getElementById('message-board');
         messageBoard.appendChild(messageElement);
+
+        let likeCount=0;
 
         // Add event listeners for delete, comment, like buttons
         messageElement.querySelector('.delete-btn').addEventListener('click', function() {
@@ -41,8 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Add event listeners for like button
+        const likeButton = messageElement.querySelector('.like-btn');
+        const likeCountElement = messageElement.querySelector('.like-count');
+
         messageElement.querySelector('.like-btn').addEventListener('click', function() {
-            // Implement liking 
+             likeCount++;
+            likeCountElement.textContent = likeCount;
         });
     }
  // Add event listener for post message button
