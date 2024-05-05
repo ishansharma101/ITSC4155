@@ -408,4 +408,35 @@ footer a:hover {
      color: 555;
  }
 
+ .event {
+    background-color: #f8f9fa;  
+    border: 1px solid #ccc;     
+    border-radius: 8px;         
+    padding: 20px;              
+    max-width: 600px;           
+    margin: 20px auto;          
+    font-family: 'Arial', sans-serif; 
+}
+
+.event h2 {
+    color: #007bff;             
+    font-size: 24px;            
+    margin-bottom: 10px;       
+}
+
+.event p {
+    color: #333;                
+    font-size: 16px;            
+    line-height: 1.5;           
+}
+
+
+.event p.date, .event p.time, .event p.location {
+    font-weight: bold;          
+}
+
+.event p.description {
+    font-style: italic;         
+    color: #555;                
+}
 
