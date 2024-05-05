@@ -187,6 +187,7 @@ label {
 input[type="text"],
 input[type="number"],
 input[type="email"],
+input[type="message"]
 select {
     width: 100%;
     padding: 5px;
@@ -439,4 +440,35 @@ footer a:hover {
     font-style: italic;         
     color: #555;                
 }
+/*-------Message Board--------*/
+.add-message  {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
+.message-input{
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+.post-message-btn button{
+    flex-basis: 48%;
+    background: #0a4b04;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
