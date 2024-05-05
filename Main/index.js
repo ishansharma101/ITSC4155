@@ -106,6 +106,17 @@ app.post("/createEvent",(req,res)=>{
     })
 })
 
+// app.get('/allEvents', (req, res) => {
+//     db.collection('events').find({}).toArray((err, events) => {
+//         if (err) {
+//             console.error('Failed to retrieve data: ', err);
+//             res.status(500).json({error: 'Internal server error'});
+//         } else {
+//             res.json(events);
+//         }
+//     });
+// });
+
 app.get("/",(req,res)=>{
     res.set({
         "Allow-access-Allow-Origin":'*'
