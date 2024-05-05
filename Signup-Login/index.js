@@ -1,6 +1,7 @@
 var express=require("express")
 var bodyParser=require("body-parser")
 var mongoose=require("mongoose")
+var session = require("express-session");
 
 const app=express()
 
@@ -9,6 +10,13 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({
     extended:true
 }))
+
+app.use(session({
+    secret: '6FjnaK49Zkr', 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } 
+}));
 
 mongoose.connect('mongodb://localhost:27017/CampusMU')
 var db=mongoose.connection
@@ -44,13 +52,6 @@ app.post("/signup",(req,res)=>{
     })
 })
 
-app.get("/",(req,res)=>{
-    res.set({
-        "Allow-access-Allow-Origin":'*'
-    })
-    return res.redirect('Signup.html')
-}).listen(3000);
-
 console.log("Listening on port 3000")
 
 app.post("/login",(req,res)=>{
@@ -62,8 +63,8 @@ app.post("/login",(req,res)=>{
             throw err;
         }
         if(user){
+            req.session.user = user;
             console.log("Login Successful")
-            //TO-DO: Adjust where user is redirected after signing in.
             return res.redirect('Dashboard.html')
         } else {
             console.log("Invalid email or password")
@@ -74,10 +75,15 @@ app.post("/login",(req,res)=>{
 
 
 app.post("/createEvent",(req,res)=>{
+    if (!req.session.user) {
+        return res.status(401).send("Unauthorized");
+    }
+
     var eventName=req.body.eventName
     var eventSize=req.body.eventSize
     var eventLocation=req.body.eventLocation
     var eventDate=req.body.eventDate
+    var username = req.session.user.username;
     
 
     db.collection('events').findOne({eventName: eventName, eventSize: eventSize, eventLocation: eventLocation, eventDate, eventDate}, (err, events) => {
@@ -86,7 +92,8 @@ app.post("/createEvent",(req,res)=>{
                 "eventName":eventName,
                 "eventSize":eventSize,
                 "eventLocation":eventLocation,
-                "eventDate": eventDate
+                "eventDate": eventDate,
+                "username": username
             }
             db.collection('events').insertOne(data,(err,collection) => {
                 if(err){
@@ -99,12 +106,9 @@ app.post("/createEvent",(req,res)=>{
     })
 })
 
-app.get("/getEvents", (req, res) => {
-    db.collection('events').find({}).toArray((err, events) => {
-        if (err) {
-            res.status(500).send("Error fetching events");
-            return;
-        }
-        res.json(events);
-    });
-});
+app.get("/",(req,res)=>{
+    res.set({
+        "Allow-access-Allow-Origin":'*'
+    })
+    return res.redirect('Signup.html')
+}).listen(3000);
