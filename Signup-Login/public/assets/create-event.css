@@ -9,7 +9,7 @@
 .container{
    width: 100%;
    height: 100vh;
-   background-image: linear-gradient(rgba(55, 131, 79, 0.8),rgba(255, 255, 255, 0.8)), url(background.png); 
+   background-image: linear-gradient(rgba(55, 131, 79, 0.8),rgba(255, 255, 255, 0.8)), url(createEvent.jpg); 
    background-position: center;
    background-size: cover;
    position: relative;
@@ -116,4 +116,59 @@ input[type=submit]{
     outline: 0;
     cursor: pointer;
     transition: background 1s;
+}
+
+header {
+    background: rgba(55, 131, 79, 0.9); 
+    padding: 10px 0;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+nav ul li {
+    margin: 0 20px; 
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 16px;
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #91a909; 
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    background-color: #f9f9f9; 
+    min-width: 160px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+.dropdown-content a {
+    color: black; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; 
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; 
 }

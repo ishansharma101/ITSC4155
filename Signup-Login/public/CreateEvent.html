@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="assets/create-event.css">
+    <script src="https://kit.fontawesome.com/18d4babef1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="homepage1.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="CreateEvent.html">Create Event</a></li>
+                <li><a href="#">My Events</a></li>
+                <li class="dropdown">
+                    <a href="profile.html">My Profile</a>
+                    <div class="dropdown-content">
+                        <a href="settings.html">Settings</a>
+                        <a href="Login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<div class="container">
+    <div class ="form-box">
+        <h1 id="title">Create Event</h1>
+        <form>
+            <div class="input-group">
+
+                <div class="input-field" id="eventName">
+                    <i class="fa-solid fa-star"></i>
+                    <input type ="text" name="eventName" placeholder="Event Name" required>
+                </div>
+
+                <div class="input-field" id="eventSize">
+                    <i class="fa-solid fa-person"></i>
+                    <input type ="number" name="eventSize" placeholder="Event Size" required>
+                </div>
+
+                <div class="input-field" id="eventLocation">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type ="text" name="eventLocation" placeholder="Event Location" required>
+                </div>
+
+                <div class="input-field" id="eventDate">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input type ="date" name="eventDate" placeholder="Event Date" required>
+                </div>
+
+            </div>
+            <div class="btn-field">
+                <input type="submit" value="Create Event" id="createEventBtn"></input>
+            </div> 
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
