@@ -64,10 +64,47 @@ app.post("/login",(req,res)=>{
         if(user){
             console.log("Login Successful")
             //TO-DO: Adjust where user is redirected after signing in.
-            return res.redirect('')
+            return res.redirect('Dashboard.html')
         } else {
             console.log("Invalid email or password")
             return res.redirect('Signup.html')
         }
     })
 })
+
+
+app.post("/createEvent",(req,res)=>{
+    var eventName=req.body.eventName
+    var eventSize=req.body.eventSize
+    var eventLocation=req.body.eventLocation
+    var eventDate=req.body.eventDate
+    
+
+    db.collection('events').findOne({eventName: eventName, eventSize: eventSize, eventLocation: eventLocation, eventDate, eventDate}, (err, events) => {
+        {
+            var data={
+                "eventName":eventName,
+                "eventSize":eventSize,
+                "eventLocation":eventLocation,
+                "eventDate": eventDate
+            }
+            db.collection('events').insertOne(data,(err,collection) => {
+                if(err){
+                    throw err;
+                }
+                console.log("Event Inserted Successfully")
+                return res.redirect('Events.html')
+            })
+        }
+    })
+})
+
+app.get("/getEvents", (req, res) => {
+    db.collection('events').find({}).toArray((err, events) => {
+        if (err) {
+            res.status(500).send("Error fetching events");
+            return;
+        }
+        res.json(events);
+    });
+});
