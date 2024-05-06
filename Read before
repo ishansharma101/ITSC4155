@@ -1,3 +1,4 @@
 In order to run our code correctly you will first need to install the folowing if not already owned:
 - Download Node.js ( https://nodejs.org/en/download )
 - Download & Register for MongoDB ( https://www.mongodb.com/cloud/atlas/register )
+further instruction are stated in the video submittion, on how to run node.js in vscode
